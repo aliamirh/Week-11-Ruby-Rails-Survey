@@ -11,6 +11,8 @@
 
 <body>
   <p><%= link_to "Home", surveys_path %></p>
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
   <%= yield %>
 </body>
 </html>

@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
     @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.new(question_params)
     if @question.save
+      flash[:notice] = "Question successfully created!"
       redirect_to survey_path(@survey)
     else
       render :new
@@ -44,8 +45,10 @@ class QuestionsController < ApplicationController
     @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
     if @question.update(question_params)
+      flash[:notice] = "Question successfully updated!"
       redirect_to survey_question_path(@survey, @question)
     else
+      flash[:alert] = "Question not updated!"
       render :edit
     end
   end
@@ -55,12 +58,13 @@ class QuestionsController < ApplicationController
 
     @question = Question.find(params[:id])
     @question.destroy
+    flash[:notice] = "Question successfully deleted!"
     redirect_to survey_path(@question.survey)
   end
 
   private
     def question_params
-      params.require(:question).permit(:text)
+      params.require(:question).permit(:text, :answer1, :answer2, :answer3, :answer4)
     end
 
 end

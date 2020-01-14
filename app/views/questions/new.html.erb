@@ -1,9 +1,3 @@
 <h1>Add Question for <%=@survey.name%></h1>
 
-<h1>New question</h1>
-
-<%= form_for [@survey, @question] do |f| %>
-<%= f.label :text %>
-<%= f.text_field :text %>
-<%= f.submit  %>
-<% end %>
+<%= render "layouts/question_form" %>
