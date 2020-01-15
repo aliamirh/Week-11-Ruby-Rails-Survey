@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   resources :surveys do
     resources :questions
   end
+
+  namespace :admin do
+    resources :surveys do
+      resources :questions
+    end
+  end
+
 end
