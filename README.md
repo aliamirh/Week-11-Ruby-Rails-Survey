@@ -3,7 +3,7 @@
 You can create a survey!
 
 ## Installation
--Clone/Download https://github.com/aliamirh/Week-12-Employee-tracker-updated
+-Clone/Download https://github.com/aliamirh/Week-11-Ruby-Rails-Survey
 
 -Run "bundle install"
 
